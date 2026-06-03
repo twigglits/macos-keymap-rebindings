@@ -125,6 +125,21 @@ a tab. These mappings are **scoped to Chrome and Edge** (they do nothing in othe
 rule's output back through itself, `Ctrl+L → Cmd+L` reaches the browser as "focus address
 bar" rather than re-triggering the lock.
 
+### Code editor (VS Code & forks only)
+
+| You press | It does | Action |
+|-----------|---------|--------|
+| `Ctrl+Shift+P` | `Cmd+Shift+P` | Open the command palette |
+
+Windows-style: `Ctrl+Shift+P` opens the command palette ("Show All Commands"). This is
+**scoped to VS Code and its forks** and does nothing in other apps. Covered editors:
+VS Code, VS Code Insiders, VSCodium, Code-OSS, Cursor, and Windsurf.
+
+> **Using a different editor?** Get its bundle ID with
+> `osascript -e 'id of app "Your Editor"'`, then add it (regex-escaped, e.g.
+> `^com\\.example\\.editor$`) to the `bundle_identifiers` list of the *IDE* rule in
+> `karabiner.json`.
+
 ### Finder (Finder only)
 
 | You press | It does | Action |

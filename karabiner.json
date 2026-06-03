@@ -982,6 +982,48 @@
                                 ]
                             }
                         ]
+                    },
+                    {
+                        "description": "IDE (VS Code & forks) Ctrl+Shift+P -> Cmd+Shift+P (open the command palette)",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control",
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "p",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.VSCode$",
+                                            "^com\\.microsoft\\.VSCodeInsiders$",
+                                            "^com\\.vscodium$",
+                                            "^com\\.visualstudio\\.code\\.oss$",
+                                            "^com\\.todesktop\\.230313mzl4w4u92$",
+                                            "^com\\.exafunction\\.windsurf$"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },
