@@ -546,7 +546,7 @@
                         ]
                     },
                     {
-                        "description": "Windows-style Alt+Tab -> Cmd+Tab application switcher (hold Alt, tap Tab to cycle; Alt+Shift+Tab cycles backward)",
+                        "description": "Windows-style Alt+Tab -> Cmd+Tab application switcher (hold Alt, tap Tab to cycle; Alt+Shift+Tab cycles backward); un-minimizes the focused app's windows once the switch settles",
                         "manipulators": [
                             {
                                 "type": "basic",
@@ -568,7 +568,17 @@
                                             "left_command"
                                         ]
                                     }
-                                ]
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_invoked": [
+                                        {
+                                            "shell_command": "osascript -e 'tell application \"System Events\" to tell (first process whose frontmost is true) to set value of attribute \"AXMinimized\" of (every window whose value of attribute \"AXMinimized\" is true) to false'"
+                                        }
+                                    ]
+                                },
+                                "parameters": {
+                                    "basic.to_delayed_action_delay_milliseconds": 400
+                                }
                             }
                         ]
                     },

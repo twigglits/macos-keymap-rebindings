@@ -164,6 +164,42 @@ and tap `` ` ``** (the backtick/tilde key) to cycle between that app's own windo
 mappings are their own rules and are **not** excluded in terminals — you can switch from
 anywhere, including a focused terminal. (`Alt` is the Option key.)
 
+#### Restoring minimized windows
+
+Plain `Cmd+Tab` — and therefore this `Alt+Tab` — has a long-standing macOS quirk:
+switching to an app whose windows are **all minimized** brings the app to the front but
+leaves its windows sitting in the Dock, so nothing actually appears on screen. To fix
+that, the Alt+Tab rule fires a short AppleScript ~0.4 s *after the switch settles* that
+un-minimizes every minimized window of the now-focused app, so the window you tabbed to
+actually shows up.
+
+The timing uses Karabiner's [`to_delayed_action`](https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/to-delayed-action/):
+each `Tab` tap re-arms a 400 ms timer, and only once you stop tapping does the script run.
+Tune it via `basic.to_delayed_action_delay_milliseconds` on the Alt+Tab rule.
+
+This one behavior needs **Accessibility** permission — the rest of the keymap does **not**.
+Karabiner runs the script through a helper, so the permission is granted to *that helper*,
+not to `Karabiner-Elements.app`:
+
+> **System Settings → Privacy & Security → Accessibility** → add
+> `/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_console_user_server`
+> and switch it **on**.
+
+A freshly-granted permission isn't picked up by the **already-running** helper until it
+restarts. Either restart Karabiner-Elements from its menu-bar icon, or kick just the helper:
+
+```sh
+launchctl kickstart -k "gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server"
+```
+
+To confirm it works: minimize a window, `Alt+Tab` away, then `Alt+Tab` back — after ~0.4 s
+the window should un-minimize on its own.
+
+Until it's granted, the switch still works — the minimized windows just won't auto-restore.
+One edge case: if you routinely *pause* inside the switcher gallery for longer than the
+delay, the timer can fire early and restore the app you were leaving instead; the windows
+that pop up are harmless, and a quick alt-tab brings you back.
+
 ## Terminals are excluded
 
 Every `Ctrl`-based mapping carries a `frontmost_application_unless` condition so it is
