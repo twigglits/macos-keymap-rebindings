@@ -1,0 +1,15 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Claude Code local / machine-specific settings.
+# These can contain local filesystem paths and usernames — keep out of version control.
+.claude/
+
+# Editor / IDE cruft
+.vscode/
+.idea/
+*.swp
+*~
