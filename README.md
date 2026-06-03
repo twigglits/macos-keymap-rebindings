@@ -10,7 +10,7 @@ This is for people coming from Windows whose muscle memory expects `Ctrl+C`, `Ct
 
 ## What's in here
 
-- **`karabiner.json`** — the Karabiner-Elements configuration (the actual keymap).
+- **`karabiner.json`** — the Karabiner-Elements configuration (the actual keymaps).
 - **`install.sh`** — a helper that copies `karabiner.json` into the right place on your
   Mac, backing up any existing config first.
 
