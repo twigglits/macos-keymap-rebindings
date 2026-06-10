@@ -91,6 +91,7 @@ cp karabiner.json ~/.config/karabiner/karabiner.json
 | `Ctrl+Y` | `Cmd+Shift+Z` | Redo |
 | `Ctrl+A` | `Cmd+A` | Select all |
 | `Ctrl+S` | `Cmd+S` | Save |
+| `Ctrl+Shift+S` | `Cmd+Shift+S` | Save as |
 | `Ctrl+F` | `Cmd+F` | Find |
 | `Ctrl+N` | `Cmd+N` | New |
 | `Ctrl+T` | `Cmd+T` | New tab |
