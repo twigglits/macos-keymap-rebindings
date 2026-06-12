@@ -93,6 +93,7 @@ cp karabiner.json ~/.config/karabiner/karabiner.json
 | `Ctrl+S` | `Cmd+S` | Save |
 | `Ctrl+Shift+S` | `Cmd+Shift+S` | Save as |
 | `Ctrl+F` | `Cmd+F` | Find |
+| `Ctrl+H` | `Cmd+H` | Find and replace |
 | `Ctrl+N` | `Cmd+N` | New |
 | `Ctrl+T` | `Cmd+T` | New tab |
 | `Ctrl+Shift+T` | `Cmd+Shift+T` | Reopen closed tab |
