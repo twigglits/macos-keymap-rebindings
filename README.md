@@ -112,19 +112,21 @@ break the shortcut.
 Global (works everywhere). The Mac's normal "focus address bar" use of `Cmd+L` in
 browsers moves to `Ctrl+L` — see below.
 
-### Browser address bar (Chrome / Edge only)
+### Browser shortcuts (Chrome / Edge / Safari / Firefox / Arc / Brave)
 
 | You press | It does | Action |
 |-----------|---------|--------|
 | `Ctrl+L` | `Cmd+L` | Focus & select the entire page URL |
+| `Ctrl+D` | `Cmd+D` | Bookmark the current page |
 | `Ctrl+1` … `Ctrl+8` | `Cmd+1` … `Cmd+8` | Jump to tab 1–8 |
 | `Ctrl+9` | `Cmd+9` | Jump to the last tab |
 
-Windows-style: `Ctrl+L` highlights the address bar, and `Ctrl+<number>` jumps straight to
-a tab. These mappings are **scoped to Chrome and Edge** (they do nothing in other apps). It's a separate physical key from the global
-`Cmd+L` lock above, so the two never collide — and because Karabiner doesn't re-feed a
-rule's output back through itself, `Ctrl+L → Cmd+L` reaches the browser as "focus address
-bar" rather than re-triggering the lock.
+Windows-style: `Ctrl+L` highlights the address bar, `Ctrl+D` bookmarks the page, and
+`Ctrl+<number>` jumps straight to a tab. These mappings are **scoped to browsers** (they
+do nothing in other apps). `Ctrl+L` is a separate physical key from the global `Cmd+L`
+lock above, so the two never collide — and because Karabiner doesn't re-feed a rule's
+output back through itself, `Ctrl+L → Cmd+L` reaches the browser as "focus address bar"
+rather than re-triggering the lock.
 
 ### Code editor (VS Code & forks only)
 
