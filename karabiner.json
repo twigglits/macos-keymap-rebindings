@@ -714,6 +714,46 @@
                         ]
                     },
                     {
+                        "description": "Browser (Chrome/Edge/Safari/Firefox/Arc/Brave) Ctrl+D -> Cmd+D (bookmark current page)",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "d",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.microsoft\\.edgemac$",
+                                            "^com\\.apple\\.Safari$",
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^company\\.thebrowser\\.Browser$",
+                                            "^com\\.brave\\.Browser$"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "description": "Finder Cmd+Q -> Cmd+Option+W (close all Finder windows)",
                         "manipulators": [
                             {
